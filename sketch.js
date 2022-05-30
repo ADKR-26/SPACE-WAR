@@ -8,7 +8,7 @@ let score = 0
 
 function setup() {
   // background(255,204,0);
-  var canv = createCanvas(400, 400);
+  var canv = createCanvas(500, 500);
   var x = (windowWidth - width) / 2;
   var y = (windowHeight - height) / 2;
   canv.position(x,y); // position of canvas in center
@@ -53,7 +53,7 @@ function draw() {
   imageMode(CENTER)
   //draw player
   fill(255,0,0)
-  let player = image(img,mouseX,height - 50,30,30);
+  let player = image(img,mouseX,height - 50,40,40);
   // let player = circle(mouseX,height - 50,25); 
   noFill()
   
@@ -62,7 +62,7 @@ function draw() {
   {
     bullet.y -= 11;
     fill(0,255,255)
-    ellipse(bullet.x,bullet.y,5,50);
+    ellipse(bullet.x,bullet.y,3,30);
   }
   noFill()
 
@@ -80,13 +80,13 @@ function draw() {
   {
     fill(182,120,0)
     enemy.y += 0.5;   
-    image(enemypic,enemy.x,enemy.y,50,50);
+    image(enemypic,enemy.x,enemy.y,60,60);
     // rect(enemy.x,enemy.y, 10)
 
     if(enemy.y>height)
     {
       fill(255,255,255)
-      text("YOU LOOSE",width/2,height/2)
+      text("--YOU LOOSE--",width/2,height/2)
       noLoop()
     }
   }
